@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewController.h"
+#import "Screen.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

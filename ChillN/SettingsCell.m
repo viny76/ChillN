@@ -1,13 +1,13 @@
 //
-//  LogoutCell.h
+//  LogoutCell.m
 //  ChillN
 //
 //  Created by Vincent Jardel on 20/02/2016.
 //  Copyright © 2016 ChillCompany. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SettingsCell.h"
 
-@interface LogoutCell : UITableViewCell
+@implementation SettingsCell
 
 @end

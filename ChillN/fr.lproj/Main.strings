@@ -1,0 +1,117 @@
+
+/* Class = "UIButton"; normalTitle = "Friends"; ObjectID = "18k-dE-iGt"; */
+"18k-dE-iGt.normalTitle" = "Amis";
+
+/* Class = "UITextField"; placeholder = "Number :"; ObjectID = "1nc-ib-6ph"; */
+"1nc-ib-6ph.placeholder" = "Number :";
+
+/* Class = "UITextField"; placeholder = "Email Address :"; ObjectID = "3iu-FF-ItL"; */
+"3iu-FF-ItL.placeholder" = "Email Address :";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "6gQ-kS-42B"; */
+"6gQ-kS-42B.normalTitle" = "Send";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8wi-hY-LHh"; */
+"8wi-hY-LHh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8z8-8W-VZe"; */
+"8z8-8W-VZe.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9f9-6d-oXu"; */
+"9f9-6d-oXu.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AXg-13-2Op"; */
+"AXg-13-2Op.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "{Subtitle}"; ObjectID = "Etg-hx-CuU"; */
+"Etg-hx-CuU.text" = "{Subtitle}";
+
+/* Class = "UISegmentedControl"; HCG-3s-pHE.segmentTitles[0] = "Friends"; ObjectID = "HCG-3s-pHE"; */
+"HCG-3s-pHE.segmentTitles[0]" = "Friends";
+
+/* Class = "UISegmentedControl"; HCG-3s-pHE.segmentTitles[1] = "Contact"; ObjectID = "HCG-3s-pHE"; */
+"HCG-3s-pHE.segmentTitles[1]" = "Contact";
+
+/* Class = "UISegmentedControl"; HCG-3s-pHE.segmentTitles[2] = "..."; ObjectID = "HCG-3s-pHE"; */
+"HCG-3s-pHE.segmentTitles[2]" = "...";
+
+/* Class = "UITextField"; placeholder = "Password :"; ObjectID = "HgA-Uw-BLx"; */
+"HgA-Uw-BLx.placeholder" = "Password :";
+
+/* Class = "UIButton"; normalTitle = "Events"; ObjectID = "LhH-PG-nEi"; */
+"LhH-PG-nEi.normalTitle" = "Events";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "NAk-WP-urR"; */
+"NAk-WP-urR.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "P0e-gh-qrP"; */
+"P0e-gh-qrP.normalTitle" = "Log In";
+
+/* Class = "UILabel"; text = "Date :"; ObjectID = "PUQ-W2-BaK"; */
+"PUQ-W2-BaK.text" = "Date :";
+
+/* Class = "UIButton"; normalTitle = "ChillN"; ObjectID = "SdH-vt-rM3"; */
+"SdH-vt-rM3.normalTitle" = "ChillN";
+
+/* Class = "UIButton"; normalTitle = "Y"; ObjectID = "UMe-3u-1VE"; */
+"UMe-3u-1VE.normalTitle" = "Y";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "UPc-BF-03z"; */
+"UPc-BF-03z.text" = "Subtitle";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "UZS-5W-ois"; */
+"UZS-5W-ois.normalTitle" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "Question"; ObjectID = "UZZ-1j-m2E"; */
+"UZZ-1j-m2E.placeholder" = "Question";
+
+/* Class = "UISegmentedControl"; Wfy-Ke-7MI.segmentTitles[0] = "YES"; ObjectID = "Wfy-Ke-7MI"; */
+"Wfy-Ke-7MI.segmentTitles[0]" = "YES";
+
+/* Class = "UISegmentedControl"; Wfy-Ke-7MI.segmentTitles[1] = "ALL"; ObjectID = "Wfy-Ke-7MI"; */
+"Wfy-Ke-7MI.segmentTitles[1]" = "ALL";
+
+/* Class = "UISegmentedControl"; Wfy-Ke-7MI.segmentTitles[2] = "NO"; ObjectID = "Wfy-Ke-7MI"; */
+"Wfy-Ke-7MI.segmentTitles[2]" = "NO";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "Zog-EH-pSu"; */
+"Zog-EH-pSu.normalTitle" = "Sign Up";
+
+/* Class = "UILabel"; text = "Don't have an account ?"; ObjectID = "Zqe-t1-03Y"; */
+"Zqe-t1-03Y.text" = "Don't have an account ?";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "aJG-Yt-d2h"; */
+"aJG-Yt-d2h.title" = "Back";
+
+/* Class = "UINavigationItem"; title = "Paramètres"; ObjectID = "bLc-dH-guW"; */
+"bLc-dH-guW.title" = "Paramètres";
+
+/* Class = "UIButton"; normalTitle = "Select Date"; ObjectID = "ccI-JD-YAs"; */
+"ccI-JD-YAs.normalTitle" = "Select Date";
+
+/* Class = "UIButton"; normalTitle = "N"; ObjectID = "cdb-f5-OKF"; */
+"cdb-f5-OKF.normalTitle" = "N";
+
+/* Class = "UITextField"; placeholder = "Username :"; ObjectID = "ew8-jS-sFi"; */
+"ew8-jS-sFi.placeholder" = "Username :";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "fPQ-4I-Gyy"; */
+"fPQ-4I-Gyy.text" = "Title";
+
+/* Class = "UITextField"; placeholder = "Password :"; ObjectID = "gKP-pV-r1N"; */
+"gKP-pV-r1N.placeholder" = "Password :";
+
+/* Class = "UIViewController"; title = "Main"; ObjectID = "iwz-Mg-Fbm"; */
+"iwz-Mg-Fbm.title" = "Main";
+
+/* Class = "UILabel"; text = "{Title}"; ObjectID = "nO3-qz-1XZ"; */
+"nO3-qz-1XZ.text" = "{Title}";
+
+/* Class = "UITextField"; placeholder = "Email :"; ObjectID = "rIa-WE-oRd"; */
+"rIa-WE-oRd.placeholder" = "Email :";
+
+/* Class = "UITextField"; placeholder = "Votre question"; ObjectID = "xWl-MZ-fLh"; */
+"xWl-MZ-fLh.placeholder" = "Votre question";
+
+/* Class = "UIViewController"; title = "LoginViewController"; ObjectID = "zzl-iK-GYh"; */
+"zzl-iK-GYh.title" = "LoginViewController";

@@ -38,15 +38,22 @@
 		2C52E1DB1B96BEE000EA6BF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C52E1DD1B96BEE000EA6BF9 /* Localizable.strings */; };
 		2C5B9A3A1AC4C49D00B78716 /* AddEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9A371AC4C49D00B78716 /* AddEventsViewController.m */; };
 		2C5B9A3B1AC4C49D00B78716 /* AddEventsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9A391AC4C49D00B78716 /* AddEventsCell.m */; };
+		2C64EDA41C7DCFB900CE42E1 /* ButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C64ED9D1C7DCFB900CE42E1 /* ButtonTableViewCell.m */; };
+		2C64EDA51C7DCFB900CE42E1 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C64ED9F1C7DCFB900CE42E1 /* SwitchTableViewCell.m */; };
+		2C64EDA61C7DCFB900CE42E1 /* LabelButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C64EDA11C7DCFB900CE42E1 /* LabelButtonTableViewCell.m */; };
+		2C64EDB31C7DD05C00CE42E1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C64EDAA1C7DD05C00CE42E1 /* Constants.m */; };
+		2C64EDB41C7DD05C00CE42E1 /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C64EDAC1C7DD05C00CE42E1 /* Screen.m */; };
+		2C64EDB51C7DD05C00CE42E1 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C64EDAE1C7DD05C00CE42E1 /* UIColor+CustomColors.m */; };
+		2C64EDB71C7DD05C00CE42E1 /* StringFromDateTranslate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C64EDB21C7DD05C00CE42E1 /* StringFromDateTranslate.m */; };
+		2C64EDB81C7DD42800CE42E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C64EDBA1C7DD42800CE42E1 /* Main.storyboard */; };
 		2C71B7B51B9A4D200005D8B9 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C71B7B41B9A4D200005D8B9 /* EditFriendsViewController.m */; };
-		2C735C901C78AF8D002E617D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C735C8F1C78AF8D002E617D /* Main.storyboard */; };
-		2C735C931C78B4BA002E617D /* LogoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C735C921C78B4BA002E617D /* LogoutCell.m */; };
+		2C735C931C78B4BA002E617D /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C735C921C78B4BA002E617D /* SettingsCell.m */; };
 		2C829F201B22ECA8004FC147 /* DetailEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C829F1F1B22ECA8004FC147 /* DetailEventViewController.m */; };
 		2C829F261B22EF23004FC147 /* DetailEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C829F251B22EF23004FC147 /* DetailEventCell.m */; };
 		2C9C71551BA75BD30088BC92 /* SevenSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C71541BA75BD30088BC92 /* SevenSwitch.swift */; };
 		2C9D044E1B995F4900756FA3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D044D1B995F4900756FA3 /* MBProgressHUD.m */; };
 		2CA207F81AF015B60054D97A /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA207F71AF015B60054D97A /* SignupViewController.m */; };
-		2CA207FB1AF01B520054D97A /* LogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA207FA1AF01B520054D97A /* LogoutViewController.m */; };
+		2CA207FB1AF01B520054D97A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA207FA1AF01B520054D97A /* SettingsViewController.m */; };
 		2CA36B171BDECD9D00D75E6E /* HSDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA36B151BDECD9D00D75E6E /* HSDatePickerViewController.m */; };
 		2CA36B181BDECD9D00D75E6E /* HSDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA36B161BDECD9D00D75E6E /* HSDatePickerViewController.xib */; };
 		2CA740BA1AC4B79B00392C7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA740B91AC4B79B00392C7C /* main.m */; };
@@ -124,11 +131,26 @@
 		2C5B9A361AC4C49D00B78716 /* AddEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventsViewController.h; sourceTree = "<group>"; };
 		2C5B9A371AC4C49D00B78716 /* AddEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventsViewController.m; sourceTree = "<group>"; };
 		2C5B9A391AC4C49D00B78716 /* AddEventsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventsCell.m; sourceTree = "<group>"; };
+		2C64ED9C1C7DCFB900CE42E1 /* ButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonTableViewCell.h; sourceTree = "<group>"; };
+		2C64ED9D1C7DCFB900CE42E1 /* ButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonTableViewCell.m; sourceTree = "<group>"; };
+		2C64ED9E1C7DCFB900CE42E1 /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
+		2C64ED9F1C7DCFB900CE42E1 /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
+		2C64EDA01C7DCFB900CE42E1 /* LabelButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelButtonTableViewCell.h; sourceTree = "<group>"; };
+		2C64EDA11C7DCFB900CE42E1 /* LabelButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelButtonTableViewCell.m; sourceTree = "<group>"; };
+		2C64EDA91C7DD05C00CE42E1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2C64EDAA1C7DD05C00CE42E1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		2C64EDAB1C7DD05C00CE42E1 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+		2C64EDAC1C7DD05C00CE42E1 /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen.m; sourceTree = "<group>"; };
+		2C64EDAD1C7DD05C00CE42E1 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		2C64EDAE1C7DD05C00CE42E1 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		2C64EDB11C7DD05C00CE42E1 /* StringFromDateTranslate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringFromDateTranslate.h; sourceTree = "<group>"; };
+		2C64EDB21C7DD05C00CE42E1 /* StringFromDateTranslate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringFromDateTranslate.m; sourceTree = "<group>"; };
+		2C64EDB91C7DD42800CE42E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C64EDBE1C7DE51200CE42E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2C6D4FC61AC4E09A0041D595 /* AddEventsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventsCell.h; sourceTree = "<group>"; };
 		2C71B7B41B9A4D200005D8B9 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
-		2C735C8F1C78AF8D002E617D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2C735C911C78B4BA002E617D /* LogoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutCell.h; sourceTree = "<group>"; };
-		2C735C921C78B4BA002E617D /* LogoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutCell.m; sourceTree = "<group>"; };
+		2C735C911C78B4BA002E617D /* SettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
+		2C735C921C78B4BA002E617D /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
 		2C829F1E1B22ECA8004FC147 /* DetailEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailEventViewController.h; sourceTree = "<group>"; };
 		2C829F1F1B22ECA8004FC147 /* DetailEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailEventViewController.m; sourceTree = "<group>"; };
 		2C829F241B22EF23004FC147 /* DetailEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailEventCell.h; path = ../DetailEventCell.h; sourceTree = "<group>"; };
@@ -138,8 +160,8 @@
 		2C9D044D1B995F4900756FA3 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2CA207F61AF015B60054D97A /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		2CA207F71AF015B60054D97A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
-		2CA207F91AF01B520054D97A /* LogoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutViewController.h; sourceTree = "<group>"; };
-		2CA207FA1AF01B520054D97A /* LogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutViewController.m; sourceTree = "<group>"; };
+		2CA207F91AF01B520054D97A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		2CA207FA1AF01B520054D97A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2CA36B141BDECD9D00D75E6E /* HSDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDatePickerViewController.h; sourceTree = "<group>"; };
 		2CA36B151BDECD9D00D75E6E /* HSDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDatePickerViewController.m; sourceTree = "<group>"; };
 		2CA36B161BDECD9D00D75E6E /* HSDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSDatePickerViewController.xib; sourceTree = "<group>"; };
@@ -258,15 +280,21 @@
 			name = Signup;
 			sourceTree = "<group>";
 		};
-		2C02F7AF1C08D64900AC7CB9 /* Logout */ = {
+		2C02F7AF1C08D64900AC7CB9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2CA207F91AF01B520054D97A /* LogoutViewController.h */,
-				2CA207FA1AF01B520054D97A /* LogoutViewController.m */,
-				2C735C911C78B4BA002E617D /* LogoutCell.h */,
-				2C735C921C78B4BA002E617D /* LogoutCell.m */,
+				2CA207F91AF01B520054D97A /* SettingsViewController.h */,
+				2CA207FA1AF01B520054D97A /* SettingsViewController.m */,
+				2C735C911C78B4BA002E617D /* SettingsCell.h */,
+				2C735C921C78B4BA002E617D /* SettingsCell.m */,
+				2C64ED9C1C7DCFB900CE42E1 /* ButtonTableViewCell.h */,
+				2C64ED9D1C7DCFB900CE42E1 /* ButtonTableViewCell.m */,
+				2C64ED9E1C7DCFB900CE42E1 /* SwitchTableViewCell.h */,
+				2C64ED9F1C7DCFB900CE42E1 /* SwitchTableViewCell.m */,
+				2C64EDA01C7DCFB900CE42E1 /* LabelButtonTableViewCell.h */,
+				2C64EDA11C7DCFB900CE42E1 /* LabelButtonTableViewCell.m */,
 			);
-			name = Logout;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		2C02F7B01C08D67300AC7CB9 /* Edit Friends */ = {
@@ -334,6 +362,21 @@
 			path = ChillN;
 			sourceTree = "<group>";
 		};
+		2C64EDA81C7DD03700CE42E1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2C64EDA91C7DD05C00CE42E1 /* Constants.h */,
+				2C64EDAA1C7DD05C00CE42E1 /* Constants.m */,
+				2C64EDAB1C7DD05C00CE42E1 /* Screen.h */,
+				2C64EDAC1C7DD05C00CE42E1 /* Screen.m */,
+				2C64EDAD1C7DD05C00CE42E1 /* UIColor+CustomColors.h */,
+				2C64EDAE1C7DD05C00CE42E1 /* UIColor+CustomColors.m */,
+				2C64EDB11C7DD05C00CE42E1 /* StringFromDateTranslate.h */,
+				2C64EDB21C7DD05C00CE42E1 /* StringFromDateTranslate.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		2C8840A91AEEE9FE00E23D18 /* HSDatePickerViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,16 +431,17 @@
 		2CA740B61AC4B79B00392C7C /* ChillN */ = {
 			isa = PBXGroup;
 			children = (
+				2C64EDA81C7DD03700CE42E1 /* Common */,
 				2CA740BB1AC4B79B00392C7C /* AppDelegate.h */,
 				2CA740BC1AC4B79B00392C7C /* AppDelegate.m */,
-				2C735C8F1C78AF8D002E617D /* Main.storyboard */,
+				2C64EDBA1C7DD42800CE42E1 /* Main.storyboard */,
 				2CA740C61AC4B79B00392C7C /* LaunchScreen.xib */,
 				2C02F7AE1C08D62F00AC7CB9 /* Signup */,
 				2C02F7AD1C08D61B00AC7CB9 /* Login */,
 				2C02F7A91C08D5A600AC7CB9 /* Home */,
 				2C02F7B01C08D67300AC7CB9 /* Edit Friends */,
 				2C02F7AA1C08D5CF00AC7CB9 /* Event */,
-				2C02F7AF1C08D64900AC7CB9 /* Logout */,
+				2C02F7AF1C08D64900AC7CB9 /* Settings */,
 				2CDC78D61B6A86BE00C69A12 /* Person.h */,
 				2CDC78D71B6A86BE00C69A12 /* Person.m */,
 				2CA740B71AC4B79B00392C7C /* Supporting Files */,
@@ -568,7 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA740C81AC4B79B00392C7C /* LaunchScreen.xib in Resources */,
-				2C735C901C78AF8D002E617D /* Main.storyboard in Resources */,
+				2C64EDB81C7DD42800CE42E1 /* Main.storyboard in Resources */,
 				2CA36B181BDECD9D00D75E6E /* HSDatePickerViewController.xib in Resources */,
 				2C52E1DB1B96BEE000EA6BF9 /* Localizable.strings in Resources */,
 				2C1EC4841BA2891F000EEC99 /* Images.xcassets in Resources */,
@@ -638,22 +682,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C2D9CFC1B92BB0B000F65D7 /* NBMetadataCoreTestMapper.m in Sources */,
-				2C735C931C78B4BA002E617D /* LogoutCell.m in Sources */,
+				2C735C931C78B4BA002E617D /* SettingsCell.m in Sources */,
 				2C016CD51AF0003C00EC7275 /* LoginViewController.m in Sources */,
 				2C2D9CFF1B92BB0B000F65D7 /* NBPhoneMetaData.m in Sources */,
 				2CA740E91AC4B85900392C7C /* HomeCell.m in Sources */,
 				2C2D9D041B92BB0B000F65D7 /* NSArray+NBAdditions.m in Sources */,
 				2C2D9D031B92BB0B000F65D7 /* NBPhoneNumberUtil.m in Sources */,
+				2C64EDA51C7DCFB900CE42E1 /* SwitchTableViewCell.m in Sources */,
 				2CA740C01AC4B79B00392C7C /* HomeViewController.m in Sources */,
 				2C9D044E1B995F4900756FA3 /* MBProgressHUD.m in Sources */,
 				2C2D9CFD1B92BB0B000F65D7 /* NBMetadataHelper.m in Sources */,
 				2C2D9CFB1B92BB0B000F65D7 /* NBMetadataCoreTest.m in Sources */,
 				2C2D9D011B92BB0B000F65D7 /* NBPhoneNumber.m in Sources */,
 				2CA207F81AF015B60054D97A /* SignupViewController.m in Sources */,
-				2CA207FB1AF01B520054D97A /* LogoutViewController.m in Sources */,
+				2CA207FB1AF01B520054D97A /* SettingsViewController.m in Sources */,
 				2CA740BD1AC4B79B00392C7C /* AppDelegate.m in Sources */,
+				2C64EDB31C7DD05C00CE42E1 /* Constants.m in Sources */,
+				2C64EDB51C7DD05C00CE42E1 /* UIColor+CustomColors.m in Sources */,
 				2C9C71551BA75BD30088BC92 /* SevenSwitch.swift in Sources */,
 				2C2D9CFE1B92BB0B000F65D7 /* NBNumberFormat.m in Sources */,
+				2C64EDA41C7DCFB900CE42E1 /* ButtonTableViewCell.m in Sources */,
 				2C71B7B51B9A4D200005D8B9 /* EditFriendsViewController.m in Sources */,
 				2C2D9CF81B92BB0B000F65D7 /* NBAsYouTypeFormatter.m in Sources */,
 				2C5B9A3A1AC4C49D00B78716 /* AddEventsViewController.m in Sources */,
@@ -661,14 +709,17 @@
 				2CDC78D81B6A86BE00C69A12 /* Person.m in Sources */,
 				2C4A2D131BB1ADF200A01012 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2C5B9A3B1AC4C49D00B78716 /* AddEventsCell.m in Sources */,
+				2C64EDA61C7DCFB900CE42E1 /* LabelButtonTableViewCell.m in Sources */,
 				2CA36B171BDECD9D00D75E6E /* HSDatePickerViewController.m in Sources */,
 				2C2D9CF91B92BB0B000F65D7 /* NBMetadataCore.m in Sources */,
 				2CA740BA1AC4B79B00392C7C /* main.m in Sources */,
 				2C829F201B22ECA8004FC147 /* DetailEventViewController.m in Sources */,
 				2C4A2D161BB1AFE800A01012 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				2C829F261B22EF23004FC147 /* DetailEventCell.m in Sources */,
+				2C64EDB71C7DD05C00CE42E1 /* StringFromDateTranslate.m in Sources */,
 				2C2D9D021B92BB0B000F65D7 /* NBPhoneNumberDesc.m in Sources */,
 				2C2D9D001B92BB0B000F65D7 /* NBPhoneMetaDataGenerator.m in Sources */,
+				2C64EDB41C7DD05C00CE42E1 /* Screen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +750,15 @@
 				2C52E1DF1B96BEE300EA6BF9 /* Base */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2C64EDBA1C7DD42800CE42E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C64EDB91C7DD42800CE42E1 /* Base */,
+				2C64EDBE1C7DE51200CE42E1 /* fr */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		2CA740C61AC4B79B00392C7C /* LaunchScreen.xib */ = {

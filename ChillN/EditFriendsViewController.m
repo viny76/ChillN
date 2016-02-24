@@ -811,7 +811,7 @@
          }
          else
          {
-             //             [self.hud removeFromSuperview];
+             [self.hud removeFromSuperview];
              //error occcurred
          }
      }];

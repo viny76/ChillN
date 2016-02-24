@@ -19,17 +19,17 @@
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        configuration.applicationId = @"AwOihECdAdj5Qz65boD7vsPMpM6h2Uj7DONpJvVm";
-        configuration.clientKey = @"gIK1bG2n5yGmoo1K7zqK1pYmynQ8U9M1CNDn3Jo3";
-        configuration.server = @"http://localhost:1337/parse";
-//        configuration.server = @"http://mongodb://localhost:27017/dev";
-    }]];
+//    // Heroku Migration
+//    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+//        configuration.applicationId = @"VpU4JfFKNOI1syoeVaWwmSGbDeMFBfVLld2T7Fdi";
+//        configuration.clientKey = @"1UxA7TR2HDuFSnILmLrJWi7zdlsnQz2ZYj2t9kls";
+//        configuration.server = @"http://chilln.herokuapp.com/parse";
+//    }]];
     
     
-//    [Parse setApplicationId:@"AwOihECdAdj5Qz65boD7vsPMpM6h2Uj7DONpJvVm"
-//                  clientKey:@"gIK1bG2n5yGmoo1K7zqK1pYmynQ8U9M1CNDn3Jo3"];
-//    [PFUser enableRevocableSessionInBackground];
+    [Parse setApplicationId:@"VpU4JfFKNOI1syoeVaWwmSGbDeMFBfVLld2T7Fdi"
+                  clientKey:@"1UxA7TR2HDuFSnILmLrJWi7zdlsnQz2ZYj2t9kls"];
+    [PFUser enableRevocableSessionInBackground];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"logged"])
     { // LOGGED = TRUE
