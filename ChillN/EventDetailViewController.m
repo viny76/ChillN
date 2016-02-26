@@ -6,40 +6,33 @@
 //  Copyright (c) 2015 ChillCompany. All rights reserved.
 //
 
-#import "DetailEventViewController.h"
-#import "DetailEventCell.h"
+#import "EventDetailViewController.h"
+#import "EventDetailCell.h"
 
-@interface DetailEventViewController ()
+@interface EventDetailViewController ()
 @end
 
-@implementation DetailEventViewController
+@implementation EventDetailViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"HEY : %@", self.event);
     self.questionString = [self.event valueForKey:@"question"];
     self.questionTextField.text = [NSString stringWithFormat:@"%@", self.questionString];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [df setDateFormat:@"dd/MM/yyyy HH:mm"];
+    NSString *date = [df stringFromDate:[self.event valueForKey:@"date"]];
+    self.dateLabel.text = date;
     
-    if([self.event valueForKey:@"date"] != nil)
-    {
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-        [df setDateFormat:@"dd'-'MM'-'yyyy' 'HH':'mm'"];
-        NSString *date = [df stringFromDate:[self.event valueForKey:@"date"]];
-        
-        self.dateLabel.text = date;
-    }
-    else
-    {
-    }
-    if ([[self.event valueForKey:@"visibility"]  isEqual: @NO])
-    {
+//    if ([self.event valueForKey:@"date"] != nil) {
+//
+//    }
+    
+    if ([[self.event valueForKey:@"visibility"] isEqual:@NO]) {
         [self.tableView setHidden:YES];
         [self.segment setHidden:YES];
-    }
-    else
-    {
+    } else {
         self.allParticipants = [self.event valueForKey:@"toUser"];
     }
 }
@@ -53,7 +46,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailEventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    EventDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.allParticipants objectAtIndex:indexPath.row ]];
     
     return cell;

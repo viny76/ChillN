@@ -13,11 +13,7 @@
 
 @end
 
-@implementation AddEventsViewController {
-    BOOL dateModify;
-    BOOL visibility;
-    BOOL scrollingProgrammatically;
-}
+@implementation AddEventsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,21 +29,16 @@
     
     self.recipientId = [[NSMutableArray alloc] init];
     self.recipientUser = [[NSMutableArray alloc] init];
-
-    [self.mySwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+    [self loadFriends];
+    
     self.mySwitch.on = YES;
     [self.selectFriendButton setImage:[UIImage imageNamed:@"ChevronBottomBlue"] forState:UIControlStateNormal];
     [self.selectFriendButton setImage:[UIImage imageNamed:@"ChevronUpBlue"] forState:UIControlStateSelected];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    visibility = 1;
-    [self loadFriends];
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    // Add a bottomBorder.
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.backgroundColor = [[UIColor colorBorder] CGColor];
+    bottomBorder.frame = CGRectMake(0, self.questionTextField.bounds.size.height + self.navigationController.navigationBar.frame.size.height, self.questionTextField.frame.size.width, 1.0f);
+    [self.questionTextField.layer addSublayer:bottomBorder];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -138,6 +129,14 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range
 replacementString:(NSString *)string {
     NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    
+    if (textField.text.length == 0) {
+        self.questionTextField.textAlignment = NSTextAlignmentCenter;
+    } else {
+        self.questionTextField.textAlignment = NSTextAlignmentLeft;
+    }
+    
+    
     return (newLength > 25) ? NO : YES;// 25 is custom value. you can use your own.
 }
 
@@ -151,15 +150,12 @@ replacementString:(NSString *)string {
 #pragma mark - HSDatePickerViewControllerDelegate
 - (void)hsDatePickerPickedDate:(NSDate *)date {
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    
-    //The Z at the end of your string represents Zulu which is UTC
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     
     //Add the following line to display the time in the local time zone
     [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
     [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
     NSString* finalTime = [dateFormatter stringFromDate:date];
-    NSLog(@"%@", finalTime);
     [self.dateButton setTitle:[dateFormatter stringFromDate:date] forState:UIControlStateNormal];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     self.selectedDate = [dateFormatter dateFromString:finalTime];
@@ -199,7 +195,8 @@ replacementString:(NSString *)string {
 - (IBAction)scrollToFriend:(id)sender {
     if (!self.selectFriendButton.selected) {
         scrollingProgrammatically = true;
-        [self.scrollView scrollRectToVisible:self.friendView.frame animated:YES];
+        //        [self.scrollView scrollRectToVisible:self.friendView.frame animated:YES];
+        [self.scrollView setContentOffset:CGPointMake(0, self.friendView.frame.origin.y) animated:YES];
         //            UIView.animateWithDuration(0.1, animations: {
         //                self.gradientViewIphone.alpha = 0.0
         //            })
@@ -210,40 +207,46 @@ replacementString:(NSString *)string {
         //            gradientViewIphone.alpha = 1
         self.selectFriendButton.selected = false;
     }
-    //    if (self.selectFriendButton.selected) {
-    //        [self.scrollView scrollRectToVisible:self.headerView.frame animated:true];
-    //    } else {
-    //        [self.scrollView scrollRectToVisible:self.friendView.frame animated:true];
-    //    }
 }
 
-- (IBAction)sendEvent:(id)sender {
-    NSLog(@"tapped");
+- (BOOL)verifications {
+    BOOL ok = YES;
+    
+    // Check Question
     if (self.questionTextField.text.length == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Question is empty" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
-    } else if (self.recipientId.count == 0) {
+        ok = NO;
+    }
+    
+    // Check Date
+    else if ([self.dateButton.titleLabel.text isEqualToString:Localized(@"Select Date")]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Select Date" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        ok = NO;
+    }
+    
+    // Check Friend
+    else if (self.recipientId.count == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Select Friend(s)" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
-    } else {
+        ok = NO;
+    }
+    
+    return ok;
+}
+
+- (IBAction)sendEvent:(id)sender {
+    if ([self verifications]) {
         PFObject *events = [PFObject objectWithClassName:@"Events"];
         [events setObject:self.currentUser.objectId forKey:@"fromUserId"];
         [events setObject:self.currentUser[@"surname"] forKey:@"fromUser"];
-        
         [events setObject:self.recipientId forKey:@"toUserId"];
         [events setObject:self.recipientUser forKey:@"toUser"];
         [events setObject:self.questionTextField.text forKey:@"question"];
-        [events setObject:[NSNumber numberWithBool:visibility] forKey:@"visibility"];
+        [events setObject:[NSNumber numberWithBool:[self.mySwitch isOn]] forKey:@"visibility"];
         [events addObject:[self.currentUser objectId] forKey:@"acceptedUser"];
-        
-        //        if (![self.dateButton.titleLabel.text isEqualToString:NSLocalizedString(@"modifyDateButton", nil)]) {
-        if (![self.dateButton.titleLabel.text isEqualToString:@"Choisir Date"]) {
-            NSLog(@"c good");
-            NSLog(@"%@", NSLocalizedString(@"modifyDateButton", nil));
-            [events setObject:self.selectedDate forKey:@"date"];
-        }
-        NSLog(@"%@", self.selectedDate);
-        
+        [events setObject:self.selectedDate forKey:@"date"];
         [events saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!"
@@ -251,24 +254,10 @@ replacementString:(NSString *)string {
                                                                    delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
             } else {
-                NSLog(@"Alright!");
                 AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
                 appDelegateTemp.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
             }
         }];
-    }
-}
-
-- (void)switchChanged:(id)sender {
-    if ([sender isOn]) {
-        NSLog(@"ON");
-        visibility = YES;
-        NSLog(@"Bool value: %d",visibility);
-    }
-    else {
-        NSLog(@"OFF");
-        visibility = NO;
-        NSLog(@"Bool value: %d",visibility);
     }
 }
 

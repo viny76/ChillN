@@ -14,7 +14,9 @@
 #import "AppDelegate.h"
 @class SevenSwitch;
 
-@interface AddEventsViewController : UIViewController
+@interface AddEventsViewController : UIViewController {
+    BOOL scrollingProgrammatically;
+}
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UITextField *questionTextField;

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController {
+    UIRefreshControl *refreshControl;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *events;

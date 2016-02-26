@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface DetailEventViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface EventDetailViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segment;

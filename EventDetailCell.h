@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailEventCell : UITableViewCell
+@interface EventDetailCell : UITableViewCell
 
 @end

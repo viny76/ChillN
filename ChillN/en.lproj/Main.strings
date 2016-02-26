@@ -50,6 +50,9 @@
 /* Class = "UILabel"; text = "Date :"; ObjectID = "PUQ-W2-BaK"; */
 "PUQ-W2-BaK.text" = "Date :";
 
+/* Class = "UITextField"; placeholder = "Ask something"; ObjectID = "QDe-D6-9eZ"; */
+"QDe-D6-9eZ.placeholder" = "Ask something";
+
 /* Class = "UIButton"; normalTitle = "ChillN"; ObjectID = "SdH-vt-rM3"; */
 "SdH-vt-rM3.normalTitle" = "ChillN";
 
@@ -74,6 +77,9 @@
 /* Class = "UISegmentedControl"; Wfy-Ke-7MI.segmentTitles[2] = "NO"; ObjectID = "Wfy-Ke-7MI"; */
 "Wfy-Ke-7MI.segmentTitles[2]" = "NO";
 
+/* Class = "UIButton"; normalTitle = "Select Date"; ObjectID = "Y5n-X4-VQx"; */
+"Y5n-X4-VQx.normalTitle" = "Select Date";
+
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "Zog-EH-pSu"; */
 "Zog-EH-pSu.normalTitle" = "Sign Up";
 
@@ -83,9 +89,6 @@
 /* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "aJG-Yt-d2h"; */
 "aJG-Yt-d2h.title" = "Back";
 
-/* Class = "UIButton"; normalTitle = "Select Date"; ObjectID = "ccI-JD-YAs"; */
-"ccI-JD-YAs.normalTitle" = "Select Date";
-
 /* Class = "UIButton"; normalTitle = "N"; ObjectID = "cdb-f5-OKF"; */
 "cdb-f5-OKF.normalTitle" = "N";
 
@@ -94,6 +97,9 @@
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "fPQ-4I-Gyy"; */
 "fPQ-4I-Gyy.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "gIX-zZ-E7H"; */
+"gIX-zZ-E7H.text" = "Title";
 
 /* Class = "UITextField"; placeholder = "Password:"; ObjectID = "gKP-pV-r1N"; */
 "gKP-pV-r1N.placeholder" = "Password:";
@@ -107,8 +113,8 @@
 /* Class = "UITextField"; placeholder = "Email:"; ObjectID = "rIa-WE-oRd"; */
 "rIa-WE-oRd.placeholder" = "Email:";
 
-/* Class = "UITextField"; placeholder = "Your question"; ObjectID = "xWl-MZ-fLh"; */
-"xWl-MZ-fLh.placeholder" = "Your question";
-
 /* Class = "UIViewController"; title = "LoginViewController"; ObjectID = "zzl-iK-GYh"; */
 "zzl-iK-GYh.title" = "LoginViewController";
+
+/* Class = "UIButton"; normalTitle = "Select Friends"; ObjectID = "zzw-ii-DGd"; */
+"zzw-ii-DGd.normalTitle" = "Select Friends";

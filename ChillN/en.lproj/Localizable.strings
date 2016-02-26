@@ -5,3 +5,9 @@
   Created by Vincent Jardel on 02/09/2015.
   Copyright (c) 2015 ChillCompany. All rights reserved.
 */
+
+// Add Event
+"headerSectionFriend" = "Select Friend:";
+
+// Settings
+"SettingsNotification" = "Settings";

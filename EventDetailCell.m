@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 ChillCompany. All rights reserved.
 //
 
-#import "DetailEventCell.h"
+#import "EventDetailCell.h"
 
-@implementation DetailEventCell
+@implementation EventDetailCell
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

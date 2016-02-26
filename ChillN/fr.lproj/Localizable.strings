@@ -5,5 +5,13 @@
   Created by Vincent Jardel on 02/09/2015.
   Copyright (c) 2015 ChillCompany. All rights reserved.
 */
+
+// Add Event
 "headerSectionFriend" = "Je l'envoie à :";
-"modifyDateButton" = "Choisir Date";
+"Select Date" = "Choisir Date";
+"Today" = "Aujourd'hui";
+"Set date" = "Confirmer";
+"Back" = "Retour";
+
+// Settings
+"SettingsNotification" = "Réglages";

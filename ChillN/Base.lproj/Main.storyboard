@@ -164,7 +164,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addEventsButton:" destination="iwz-Mg-Fbm" eventType="touchUpInside" id="6gG-eS-cJH"/>
                                     <segue destination="q2f-dC-1If" kind="show" identifier="addEvents" id="I1H-xu-63e"/>
                                 </connections>
                             </button>
@@ -176,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chY-7Z-PFE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="31"/>
+            <point key="canvasLocation" x="1765" y="21"/>
         </scene>
         <!--Add Events View Controller-->
         <scene sceneID="cQ0-xi-R7E">
@@ -208,7 +207,7 @@
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5n-X4-VQx">
-                                                        <rect key="frame" x="0.0" y="293" width="80" height="30"/>
+                                                        <rect key="frame" x="10" y="293" width="80" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Select Date">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -218,7 +217,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXP-sf-2tu" customClass="SevenSwitch" customModule="ChillN">
-                                                        <rect key="frame" x="0.0" y="333" width="70" height="30"/>
+                                                        <rect key="frame" x="10" y="333" width="70" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="LP2-P9-aNC"/>
@@ -228,7 +227,7 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
                                                                 <color key="value" red="0.22352942819999999" green="0.92549026010000002" blue="0.1764705926" alpha="1" colorSpace="deviceRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="icon_check"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="eye"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
                                                                 <color key="value" red="0.97647064920000004" green="0.054901964960000001" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                                                             </userDefinedRuntimeAttribute>
@@ -239,21 +238,15 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="NXP-sf-2tu" secondAttribute="bottom" id="4Wv-FR-8be"/>
                                                     <constraint firstItem="NXP-sf-2tu" firstAttribute="top" secondItem="Y5n-X4-VQx" secondAttribute="bottom" constant="10" id="8O6-fg-wMr"/>
                                                     <constraint firstItem="Y5n-X4-VQx" firstAttribute="top" secondItem="QDe-D6-9eZ" secondAttribute="bottom" id="BVF-VL-cP4"/>
-                                                    <constraint firstItem="NXP-sf-2tu" firstAttribute="leading" secondItem="Km7-el-Ok1" secondAttribute="leading" id="SBm-Qa-fd7"/>
+                                                    <constraint firstItem="NXP-sf-2tu" firstAttribute="leading" secondItem="Km7-el-Ok1" secondAttribute="leading" constant="10" id="SBm-Qa-fd7"/>
                                                     <constraint firstItem="QDe-D6-9eZ" firstAttribute="top" secondItem="Km7-el-Ok1" secondAttribute="top" id="T5C-2H-ItE"/>
-                                                    <constraint firstItem="Y5n-X4-VQx" firstAttribute="leading" secondItem="Km7-el-Ok1" secondAttribute="leading" id="dbB-TS-uSv"/>
+                                                    <constraint firstItem="Y5n-X4-VQx" firstAttribute="leading" secondItem="Km7-el-Ok1" secondAttribute="leading" constant="10" id="dbB-TS-uSv"/>
                                                     <constraint firstItem="QDe-D6-9eZ" firstAttribute="leading" secondItem="Km7-el-Ok1" secondAttribute="leading" id="fcj-rd-ag1"/>
                                                     <constraint firstItem="QDe-D6-9eZ" firstAttribute="height" secondItem="Km7-el-Ok1" secondAttribute="height" multiplier="2:3" id="muu-aY-5dx"/>
                                                     <constraint firstAttribute="trailing" secondItem="QDe-D6-9eZ" secondAttribute="trailing" id="nIS-4x-CHN"/>
                                                 </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="4Wv-FR-8be"/>
-                                                    </mask>
-                                                </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTm-LK-OoV" userLabel="Friend View">
                                                 <rect key="frame" x="0.0" y="440" width="320" height="440"/>
@@ -360,7 +353,6 @@
                             <constraint firstItem="u5Z-5k-ohQ" firstAttribute="top" secondItem="Vcl-pT-rsB" secondAttribute="bottom" id="FQY-KT-JsP"/>
                             <constraint firstItem="Qtm-0R-1di" firstAttribute="top" secondItem="Knp-F5-z9V" secondAttribute="bottom" id="Ios-ld-i1M"/>
                             <constraint firstItem="Knp-F5-z9V" firstAttribute="leading" secondItem="yAp-6B-Nif" secondAttribute="leading" id="TfM-uR-XZh"/>
-                            <constraint firstItem="pTm-LK-OoV" firstAttribute="width" secondItem="yAp-6B-Nif" secondAttribute="width" id="dCy-An-zeZ"/>
                             <constraint firstItem="Knp-F5-z9V" firstAttribute="top" secondItem="u5Z-5k-ohQ" secondAttribute="bottom" id="lCm-Ey-5EP"/>
                             <constraint firstAttribute="trailing" secondItem="u5Z-5k-ohQ" secondAttribute="trailing" id="lD4-0M-m77"/>
                         </constraints>
@@ -931,10 +923,10 @@
             </objects>
             <point key="canvasLocation" x="2255" y="792"/>
         </scene>
-        <!--Detail Event View Controller-->
+        <!--Event Detail View Controller-->
         <scene sceneID="thY-yC-5Up">
             <objects>
-                <viewController id="VjO-HY-y98" customClass="DetailEventViewController" sceneMemberID="viewController">
+                <viewController id="VjO-HY-y98" customClass="EventDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wHA-dZ-UGS"/>
                         <viewControllerLayoutGuide type="bottom" id="VB6-25-Jj7"/>
@@ -984,7 +976,7 @@
                                         </variation>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wfy-Ke-7MI">
-                                        <rect key="frame" x="100" y="77" width="119" height="29"/>
+                                        <rect key="frame" x="100" y="87.5" width="119" height="29"/>
                                         <segments>
                                             <segment title="YES"/>
                                             <segment title="ALL"/>
@@ -996,13 +988,13 @@
                                 <constraints>
                                     <constraint firstItem="wel-YL-EE6" firstAttribute="leading" secondItem="3re-4Q-reg" secondAttribute="leading" id="CWh-Tg-Lel"/>
                                     <constraint firstAttribute="trailing" secondItem="wel-YL-EE6" secondAttribute="trailing" id="SG8-UI-gnX"/>
-                                    <constraint firstItem="Wfy-Ke-7MI" firstAttribute="top" secondItem="PUQ-W2-BaK" secondAttribute="bottom" constant="10" id="V8C-er-XSh"/>
+                                    <constraint firstItem="Wfy-Ke-7MI" firstAttribute="top" secondItem="PUQ-W2-BaK" secondAttribute="bottom" constant="20" id="V8C-er-XSh"/>
                                     <constraint firstItem="Wfy-Ke-7MI" firstAttribute="centerX" secondItem="3re-4Q-reg" secondAttribute="centerX" id="dKD-EZ-3KX"/>
                                     <constraint firstItem="wel-YL-EE6" firstAttribute="top" secondItem="3re-4Q-reg" secondAttribute="top" id="uNV-ij-wbA"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c5t-dL-Oi7">
-                                <rect key="frame" x="0.0" y="87.5" width="320" height="416.5"/>
+                                <rect key="frame" x="0.0" y="120.5" width="320" height="383.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="m09-qg-hCg" customClass="DetailEventCell">
@@ -1012,6 +1004,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1023,14 +1016,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VB6-25-Jj7" firstAttribute="top" secondItem="c5t-dL-Oi7" secondAttribute="bottom" id="2lH-Yg-nod"/>
+                            <constraint firstItem="c5t-dL-Oi7" firstAttribute="top" secondItem="Wfy-Ke-7MI" secondAttribute="bottom" constant="5" id="ERg-zl-js3"/>
                             <constraint firstItem="3re-4Q-reg" firstAttribute="leading" secondItem="eL6-ti-XmZ" secondAttribute="leading" id="GuT-vw-LCk"/>
                             <constraint firstAttribute="trailing" secondItem="3re-4Q-reg" secondAttribute="trailing" id="Jhq-1t-Qh7"/>
                             <constraint firstAttribute="trailing" secondItem="c5t-dL-Oi7" secondAttribute="trailing" id="VVJ-8X-l4l"/>
                             <constraint firstItem="3re-4Q-reg" firstAttribute="bottom" secondItem="VB6-25-Jj7" secondAttribute="top" id="XCT-cw-j2O"/>
-                            <constraint firstItem="c5t-dL-Oi7" firstAttribute="top" secondItem="wel-YL-EE6" secondAttribute="bottom" id="d1G-ik-oii"/>
+                            <constraint firstItem="c5t-dL-Oi7" firstAttribute="top" secondItem="wel-YL-EE6" secondAttribute="bottom" constant="10" id="d1G-ik-oii"/>
                             <constraint firstItem="c5t-dL-Oi7" firstAttribute="leading" secondItem="eL6-ti-XmZ" secondAttribute="leading" id="gbZ-dZ-DYb"/>
                             <constraint firstItem="3re-4Q-reg" firstAttribute="top" secondItem="eL6-ti-XmZ" secondAttribute="top" id="x8e-JS-vVi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="d1G-ik-oii"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
@@ -1186,7 +1185,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_check" width="37" height="37"/>
+        <image name="eye" width="25" height="25"/>
         <image name="icon_x" width="11" height="11"/>
     </resources>
 </document>
