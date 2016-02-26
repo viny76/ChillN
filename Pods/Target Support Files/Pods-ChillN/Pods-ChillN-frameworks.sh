@@ -89,7 +89,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-ChillN/HSDatePickerViewController.framework"
   install_framework "Pods-ChillN/MBProgressHUD.framework"
   install_framework "Pods-ChillN/Parse.framework"
-  install_framework "Pods-ChillN/SevenSwitch.framework"
   install_framework "Pods-ChillN/TPKeyboardAvoiding.framework"
   install_framework "Pods-ChillN/libPhoneNumber_iOS.framework"
 fi
@@ -99,7 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-ChillN/HSDatePickerViewController.framework"
   install_framework "Pods-ChillN/MBProgressHUD.framework"
   install_framework "Pods-ChillN/Parse.framework"
-  install_framework "Pods-ChillN/SevenSwitch.framework"
   install_framework "Pods-ChillN/TPKeyboardAvoiding.framework"
   install_framework "Pods-ChillN/libPhoneNumber_iOS.framework"
 fi

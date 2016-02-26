@@ -34,11 +34,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SevenSwitch.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>TPKeyboardAvoiding.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,12 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50249A4357B337021CC774E05721DFF9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>689853C4564293889E2EE511EC95D142</key>
+		<key>5FC10CE9113181759CFDE5E776792BE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B14F5C0C9EB05935947F197370AF55D8</key>
+		<key>BCA053B6430690326435042FEB61B458</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCA053B6430690326435042FEB61B458</key>
+		<key>C8A2A249B7DC1AA5776574761822410E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -15,8 +15,6 @@
 		2C016CE51AF0018B00EC7275 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C016CE41AF0018B00EC7275 /* QuartzCore.framework */; };
 		2C016CE71AF0019400EC7275 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C016CE61AF0019400EC7275 /* Security.framework */; };
 		2C016CEB1AF001AA00EC7275 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C016CEA1AF001AA00EC7275 /* SystemConfiguration.framework */; };
-		2C016CED1AF001B800EC7275 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C016CEC1AF001B800EC7275 /* libz.dylib */; };
-		2C016CEF1AF001C100EC7275 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C016CEE1AF001C100EC7275 /* libsqlite3.dylib */; };
 		2C1EC4841BA2891F000EEC99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EC4831BA2891F000EEC99 /* Images.xcassets */; };
 		2C2D9CDC1B92BA7C000F65D7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2D9CDB1B92BA7C000F65D7 /* CoreTelephony.framework */; };
 		2C52E1DB1B96BEE000EA6BF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C52E1DD1B96BEE000EA6BF9 /* Localizable.strings */; };
@@ -46,7 +44,7 @@
 		2CA740E91AC4B85900392C7C /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA740E81AC4B85900392C7C /* HomeCell.m */; };
 		2CC8CD451C7FEAFC004EE169 /* SevenSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8CD441C7FEAFC004EE169 /* SevenSwitch.swift */; };
 		2CDC78D81B6A86BE00C69A12 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC78D71B6A86BE00C69A12 /* Person.m */; };
-		AFFC5D0AF8707AA5748F02B6 /* Pods_ChillN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AFCD4DB95D989CBD96DE1C /* Pods_ChillN.framework */; };
+		33EA8CDB7B6045A39DD77FD7 /* Pods_ChillN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98461C4CF5BD456DFC9C7CEC /* Pods_ChillN.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +67,6 @@
 		2C016CE41AF0018B00EC7275 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2C016CE61AF0019400EC7275 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2C016CEA1AF001AA00EC7275 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		2C016CEC1AF001B800EC7275 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		2C016CEE1AF001C100EC7275 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2C17D8551AF147D20012009B /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
 		2C1EC4831BA2891F000EEC99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ChillN/Images.xcassets; sourceTree = "<group>"; };
 		2C2D9CDB1B92BA7C000F65D7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -123,7 +119,6 @@
 		2CA740E11AC4B80300392C7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CA740E71AC4B85900392C7C /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		2CA740E81AC4B85900392C7C /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
-		2CC8CD3A1C7FD98D004EE169 /* ChillN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChillN-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CC8CD431C7FE92A004EE169 /* ChillN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChillN-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CC8CD441C7FEAFC004EE169 /* SevenSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenSwitch.swift; sourceTree = "<group>"; };
 		2CC8CD471C7FEBC0004EE169 /* ChillN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChillN-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -131,7 +126,7 @@
 		2CDC78D71B6A86BE00C69A12 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		39466E8FDD87AF1B59DC621E /* Pods-ChillN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChillN.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChillN/Pods-ChillN.release.xcconfig"; sourceTree = "<group>"; };
 		4DFE030E839A4665E835DCA5 /* Pods-ChillN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChillN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChillN/Pods-ChillN.debug.xcconfig"; sourceTree = "<group>"; };
-		E5AFCD4DB95D989CBD96DE1C /* Pods_ChillN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChillN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98461C4CF5BD456DFC9C7CEC /* Pods_ChillN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChillN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C2D9CDC1B92BA7C000F65D7 /* CoreTelephony.framework in Frameworks */,
-				2C016CEF1AF001C100EC7275 /* libsqlite3.dylib in Frameworks */,
-				2C016CED1AF001B800EC7275 /* libz.dylib in Frameworks */,
 				2C016CEB1AF001AA00EC7275 /* SystemConfiguration.framework in Frameworks */,
 				2C016CE71AF0019400EC7275 /* Security.framework in Frameworks */,
 				2C016CE51AF0018B00EC7275 /* QuartzCore.framework in Frameworks */,
@@ -152,7 +145,7 @@
 				2CA740E61AC4B82800392C7C /* CoreGraphics.framework in Frameworks */,
 				2CA740E51AC4B82300392C7C /* UIKit.framework in Frameworks */,
 				2CA740E41AC4B81E00392C7C /* Foundation.framework in Frameworks */,
-				AFFC5D0AF8707AA5748F02B6 /* Pods_ChillN.framework in Frameworks */,
+				33EA8CDB7B6045A39DD77FD7 /* Pods_ChillN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +275,6 @@
 				2CA740D01AC4B79B00392C7C /* ChillNTests */,
 				2CA740B51AC4B79B00392C7C /* Products */,
 				6A2E24C443AAF813D92C999C /* Pods */,
-				2CC8CD3A1C7FD98D004EE169 /* ChillN-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -350,8 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				2C2D9CDB1B92BA7C000F65D7 /* CoreTelephony.framework */,
-				2C016CEE1AF001C100EC7275 /* libsqlite3.dylib */,
-				2C016CEC1AF001B800EC7275 /* libz.dylib */,
 				2C016CEA1AF001AA00EC7275 /* SystemConfiguration.framework */,
 				2C016CE61AF0019400EC7275 /* Security.framework */,
 				2C016CE41AF0018B00EC7275 /* QuartzCore.framework */,
@@ -362,7 +352,7 @@
 				2CA740E11AC4B80300392C7C /* Foundation.framework */,
 				2CA740DF1AC4B7FA00392C7C /* UIKit.framework */,
 				2CA740DD1AC4B7F000392C7C /* CoreGraphics.framework */,
-				E5AFCD4DB95D989CBD96DE1C /* Pods_ChillN.framework */,
+				98461C4CF5BD456DFC9C7CEC /* Pods_ChillN.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

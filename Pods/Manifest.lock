@@ -6,7 +6,6 @@ PODS:
   - MBProgressHUD (0.9.2)
   - Parse (1.12.0):
     - Bolts/Tasks (~> 1.5)
-  - SevenSwitch (2.0.0)
   - TPKeyboardAvoiding (1.2.11)
 
 DEPENDENCIES:
@@ -15,7 +14,6 @@ DEPENDENCIES:
   - libPhoneNumber-iOS (~> 0.8)
   - MBProgressHUD (~> 0.9.2)
   - Parse
-  - SevenSwitch (~> 2.0)
   - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
@@ -25,7 +23,6 @@ SPEC CHECKSUMS:
   libPhoneNumber-iOS: ded33fab2c51ee847979556aa504c9e70f32d703
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
-  SevenSwitch: 4ae92ffcad0ef93b38553b39a25e753c94eb7847
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
 
 COCOAPODS: 0.39.0
