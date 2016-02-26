@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HSDatePickerViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,25 +34,65 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SevenSwitch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>libPhoneNumber-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4C36B1F5D992ACDFD781AFC537E2D4B2</key>
+		<key>230F06C649365BFB9A3B54AAE6CD35CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4CD92797A96766670A60AE5197C5FB82</key>
+		<key>50249A4357B337021CC774E05721DFF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B916844F33E8D3CF7BC18CE424E9721</key>
+		<key>689853C4564293889E2EE511EC95D142</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED10C748AE57753553DAD19F64DAB557</key>
+		<key>B0214E86E9E229E292863BC821997C4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B14F5C0C9EB05935947F197370AF55D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BCA053B6430690326435042FEB61B458</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE0A701D8A271EFE0065667D13272921</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2F903264A57370F445EE2F39CCAC6C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NBPhoneMetaDataGenerator.h"
 #import "NBPhoneNumberUtil.h"
 #import "NBAsYouTypeFormatter.h"
 #import "MBProgressHUD.h"

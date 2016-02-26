@@ -12,7 +12,7 @@
 #import "SwitchTableViewCell.h"
 #import "LabelButtonTableViewCell.h"
 #import "Constants.h"
-#import <Parse.h>
+#import "Parse.h"
 
 @interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSArray *values;

@@ -10,8 +10,8 @@
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
 #import "MBProgressHUD.h"
-#import "ChillN-Swift.h"
-
+#import "HSDatePickerViewController.h"
+#import "AppDelegate.h"
 @class SevenSwitch;
 
 @interface AddEventsViewController : UIViewController
@@ -19,8 +19,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UITextField *questionTextField;
 @property (strong, nonatomic) IBOutlet UIButton *dateButton;
-@property (strong, nonatomic) IBOutlet UISwitch *visibilitySwitch;
-@property (nonatomic, strong) IBOutlet SevenSwitch *mySwitch;
+@property (strong, nonatomic) IBOutlet SevenSwitch *mySwitch;
+@property (strong, nonatomic) IBOutlet UIButton *selectFriendButton;
 
 @property (strong, nonatomic) NSString *questionString;
 @property (strong, nonatomic) NSArray *friendsList;
@@ -30,9 +30,13 @@
 @property (strong, nonatomic) NSString *fromUser;
 @property (strong, nonatomic) NSString *toUserId;
 @property (strong, nonatomic) NSString *toUser;
-@property(nonatomic, strong) PFUser *currentUser;
-@property(nonatomic,strong) PFRelation *friendsRelation;
-@property (nonatomic, strong) NSDate *selectedDate;
-@property (nonatomic, strong) MBProgressHUD *hud;
+@property (strong, nonatomic) PFUser *currentUser;
+@property (strong, nonatomic) PFRelation *friendsRelation;
+@property (strong, nonatomic) NSDate *selectedDate;
+@property (strong, nonatomic) MBProgressHUD *hud;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *friendHeight;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) IBOutlet UIView *friendView;
 
 @end

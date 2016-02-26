@@ -167,19 +167,16 @@ BOOL notificationOn = NO;
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     // Rows in section 1 should not be selectable
-    if (indexPath.section == 1) {
-        return NO;
-    }
-    
+//    if (indexPath.section == 1) {
+//        return NO;
+//    }
     return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
-    } else if (indexPath.section == 1) {
-        // Nothing to do
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section) {
         if (indexPath.row == 0) {
             // Disconnect User
             [PFUser logOut];
@@ -199,19 +196,6 @@ BOOL notificationOn = NO;
 }
 
 #pragma mark - Actions
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        if (alertView.tag == 0) {
-            // Update PIN Code
-        } else if (alertView.tag == 1) {
-            // Delete PIN Code
-            }
-        } else if (alertView.tag == 2) {
-            // Define PIN Code
-        }
-}
-
 - (IBAction)labelButtonCellTouched:(UIButton *)sender {
     if (sender.tag == 4) {
         if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
