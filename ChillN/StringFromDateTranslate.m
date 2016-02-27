@@ -11,7 +11,7 @@
 @implementation StringFromDateTranslate
 
 + (NSString *)translateDate:(NSDate *)date {
-    NSCalendar *gregorian = [[NSCalendar alloc]  initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *currentDateComponents = [gregorian components:NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitYear
                                                            fromDate:date];
     
@@ -26,7 +26,7 @@
 }
 
 + (NSString *)translateTime:(NSDate *)date {
-    NSCalendar *gregorian = [[NSCalendar alloc]  initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [[NSCalendar alloc]  initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *currentDateComponents = [gregorian components:NSCalendarUnitHour|NSCalendarUnitMinute
                                                            fromDate:date];
     

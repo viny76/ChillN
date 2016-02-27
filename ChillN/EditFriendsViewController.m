@@ -5,10 +5,6 @@
 //  Copyright (c) 2014 Jardel Vincent. All rights reserved.
 
 #import "EditFriendsViewController.h"
-#import <AddressBook/AddressBook.h>
-#import <AddressBookUI/AddressBookUI.h>
-#import "Person.h"
-#import "MBProgressHUD.h"
 
 @interface EditFriendsViewController ()
 @end
@@ -70,7 +66,7 @@
     }
     else if (self.segment.selectedSegmentIndex == 1) {
         BOOL showSection = [[self.sectionedPersonName objectAtIndex:section] count] != 0;
-        //only show the section title if there are rows in the section
+        // Only show the section title if there are rows in the section
         return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
     }
     else if (self.segment.selectedSegmentIndex == 2) {

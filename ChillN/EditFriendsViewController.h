@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 #import "NBPhoneNumberUtil.h"
 #import "NBAsYouTypeFormatter.h"
 #import "MBProgressHUD.h"
+#import "Person.h"
 
 @interface EditFriendsViewController : UITableViewController <UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchResultsUpdating> {
     NBPhoneNumberUtil *phoneUtil;
 }
 
+@property (nonatomic, strong) IBOutlet UISegmentedControl *segment;
 @property (nonatomic, strong) NSArray *allUsers;
 @property (nonatomic, strong) PFRelation *friendsRelation;
 @property (nonatomic, strong) PFUser *currentUser;
@@ -24,14 +28,12 @@
 @property (nonatomic, strong) NSMutableArray *tableData;
 @property (nonatomic, strong) NSString *selectedObjectId;
 @property (nonatomic, strong) NSMutableArray *friendRequestsWaiting;
-@property(readwrite, copy, nonatomic) NSArray *sectionedPersonName;
-
-@property (strong, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (nonatomic, strong) MBProgressHUD *hud;
-@property (strong, nonatomic) NSArray *result;
+@property (nonatomic, strong) NSArray *result;
 @property (nonatomic, strong) PFUser *selectedUser;
-@property (strong, nonatomic) NSArray *searchResults;
-@property (strong, nonatomic) UISearchController *searchController;
+@property (nonatomic, strong) NSArray *searchResults;
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, readwrite, copy) NSArray *sectionedPersonName;
 
 -(BOOL)isFriend:(PFUser*)user;
 
