@@ -906,20 +906,10 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchDisplayController" destination="l6k-xH-tb0" id="rXa-Jy-qHk"/>
                         <outlet property="segment" destination="HCG-3s-pHE" id="XG4-Sk-57G"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfa-X5-LHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="l6k-xH-tb0">
-                    <connections>
-                        <outlet property="delegate" destination="Hqy-wl-3Oc" id="Zas-bI-EZt"/>
-                        <outlet property="searchBar" destination="86P-wD-PDc" id="Bwz-M5-squ"/>
-                        <outlet property="searchContentsController" destination="Hqy-wl-3Oc" id="vxz-re-yZa"/>
-                        <outlet property="searchResultsDataSource" destination="Hqy-wl-3Oc" id="2Vd-wa-v7c"/>
-                        <outlet property="searchResultsDelegate" destination="Hqy-wl-3Oc" id="afs-O2-Ut5"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2255" y="792"/>
         </scene>

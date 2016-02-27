@@ -12,7 +12,7 @@
 #import "NBAsYouTypeFormatter.h"
 #import "MBProgressHUD.h"
 
-@interface EditFriendsViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, UISearchResultsUpdating> {
+@interface EditFriendsViewController : UITableViewController <UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchResultsUpdating> {
     NBPhoneNumberUtil *phoneUtil;
 }
 
