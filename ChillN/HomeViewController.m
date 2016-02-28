@@ -35,6 +35,8 @@
     //reloadEvents
     self.currentUser = [PFUser currentUser];
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friends"];
+    NSLog(@"%@", self.currentUser);
+    NSLog(@"%@", self.friendsRelation);
     
     refreshControl = [[UIRefreshControl alloc]init];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Last Refresh: 5min"];

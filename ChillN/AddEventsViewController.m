@@ -137,7 +137,7 @@ replacementString:(NSString *)string {
     }
     
     
-    return (newLength > 25) ? NO : YES;// 25 is custom value. you can use your own.
+    return (newLength > 25) ? NO : YES; // 25 is custom value. you can use your own.
 }
 
 - (IBAction)showDatePicker:(id)sender {
@@ -146,13 +146,13 @@ replacementString:(NSString *)string {
     [self presentViewController:hsdpvc animated:YES completion:nil];
 }
 
-//DATE PICKER
+// DATE PICKER
 #pragma mark - HSDatePickerViewControllerDelegate
 - (void)hsDatePickerPickedDate:(NSDate *)date {
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     
-    //Add the following line to display the time in the local time zone
+    // Add the following line to display the time in the local time zone
     [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
     [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
     NSString* finalTime = [dateFormatter stringFromDate:date];
@@ -176,10 +176,10 @@ replacementString:(NSString *)string {
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
     self.friendsRelation = [self.currentUser objectForKey:@"friends"];
+    NSLog(@"%@", self.friendsRelation);
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"surname"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
          if (error) {
              NSLog(@"Error %@ %@", error, [error userInfo]);
              [self.hud removeFromSuperview];
