@@ -30,7 +30,6 @@
 		2C71B7B51B9A4D200005D8B9 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C71B7B41B9A4D200005D8B9 /* EditFriendsViewController.m */; };
 		2C735C931C78B4BA002E617D /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C735C921C78B4BA002E617D /* SettingsCell.m */; };
 		2C829F201B22ECA8004FC147 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C829F1F1B22ECA8004FC147 /* EventDetailViewController.m */; };
-		2C829F261B22EF23004FC147 /* EventDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C829F251B22EF23004FC147 /* EventDetailCell.m */; };
 		2CA207F81AF015B60054D97A /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA207F71AF015B60054D97A /* SignupViewController.m */; };
 		2CA207FB1AF01B520054D97A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA207FA1AF01B520054D97A /* SettingsViewController.m */; };
 		2CA740BA1AC4B79B00392C7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA740B91AC4B79B00392C7C /* main.m */; };
@@ -96,8 +95,6 @@
 		2C735C921C78B4BA002E617D /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
 		2C829F1E1B22ECA8004FC147 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
 		2C829F1F1B22ECA8004FC147 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
-		2C829F241B22EF23004FC147 /* EventDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailCell.h; path = ../EventDetailCell.h; sourceTree = "<group>"; };
-		2C829F251B22EF23004FC147 /* EventDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailCell.m; path = ../EventDetailCell.m; sourceTree = "<group>"; };
 		2CA207F61AF015B60054D97A /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		2CA207F71AF015B60054D97A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		2CA207F91AF01B520054D97A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -183,8 +180,6 @@
 			children = (
 				2C829F1E1B22ECA8004FC147 /* EventDetailViewController.h */,
 				2C829F1F1B22ECA8004FC147 /* EventDetailViewController.m */,
-				2C829F241B22EF23004FC147 /* EventDetailCell.h */,
-				2C829F251B22EF23004FC147 /* EventDetailCell.m */,
 			);
 			name = "Event Detail";
 			sourceTree = "<group>";
@@ -544,7 +539,6 @@
 				2CC8CD451C7FEAFC004EE169 /* SevenSwitch.swift in Sources */,
 				2CA740BA1AC4B79B00392C7C /* main.m in Sources */,
 				2C829F201B22ECA8004FC147 /* EventDetailViewController.m in Sources */,
-				2C829F261B22EF23004FC147 /* EventDetailCell.m in Sources */,
 				2C64EDB71C7DD05C00CE42E1 /* StringFromDateTranslate.m in Sources */,
 				2C64EDB41C7DD05C00CE42E1 /* Screen.m in Sources */,
 			);

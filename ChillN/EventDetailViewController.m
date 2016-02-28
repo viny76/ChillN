@@ -7,7 +7,6 @@
 //
 
 #import "EventDetailViewController.h"
-#import "EventDetailCell.h"
 
 @interface EventDetailViewController ()
 @end
@@ -46,7 +45,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.allParticipants objectAtIndex:indexPath.row ]];
     
     return cell;
