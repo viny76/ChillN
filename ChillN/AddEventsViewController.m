@@ -175,7 +175,7 @@ replacementString:(NSString *)string {
 - (void)loadFriends {
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
-    self.friendsRelation = [self.currentUser objectForKey:@"friends"];
+    self.friendsRelation = [self.currentUser relationForKey:@"friends"];
     NSLog(@"%@", self.friendsRelation);
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"surname"];

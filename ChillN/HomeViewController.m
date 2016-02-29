@@ -34,7 +34,7 @@
     
     //reloadEvents
     self.currentUser = [PFUser currentUser];
-    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friends"];
+    self.friendsRelation = [[PFUser currentUser] relationForKey:@"friends"];
     NSLog(@"%@", self.currentUser);
     NSLog(@"%@", self.friendsRelation);
     

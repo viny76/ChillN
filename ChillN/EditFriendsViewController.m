@@ -477,7 +477,7 @@
 - (void)loadFriends {
     self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
-    self.friendsRelation = [self.currentUser objectForKey:@"friends"];
+    self.friendsRelation = [self.currentUser relationForKey:@"friends"];
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -522,7 +522,7 @@
         } else {
             self.allUsers = objects;
             [self.tableView reloadData];
-            self.friendsRelation = [self.currentUser objectForKey:@"friends"];
+            self.friendsRelation = [self.currentUser relationForKey:@"friends"];
             PFQuery *query = [self.friendsRelation query];
             [query orderByAscending:@"username"];
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

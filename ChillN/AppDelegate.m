@@ -19,13 +19,13 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = @"VpU4JfFKNOI1syoeVaWwmSGbDeMFBfVLld2T7Fdi";
         configuration.clientKey = @"1UxA7TR2HDuFSnILmLrJWi7zdlsnQz2ZYj2t9kls";
-        configuration.server = @"http://chilln.herokuapp.com/parse/";
+        configuration.server = @"http://chilln.herokuapp.com/parse";
     }]];
+    [PFUser enableRevocableSessionInBackground];
     
     
 //    [Parse setApplicationId:@"VpU4JfFKNOI1syoeVaWwmSGbDeMFBfVLld2T7Fdi"
 //                  clientKey:@"1UxA7TR2HDuFSnILmLrJWi7zdlsnQz2ZYj2t9kls"];
-    [PFUser enableRevocableSessionInBackground];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"logged"]) { // LOGGED = TRUE
         self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
