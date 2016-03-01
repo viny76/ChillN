@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "NBPhoneNumberUtil.h"
 #import "NBAsYouTypeFormatter.h"
 #import "MBProgressHUD.h"
+#import "AppDelegate.h"
 
-@interface SignupViewController : UIViewController
-{
+@interface SignupViewController : UIViewController {
     NBAsYouTypeFormatter *asYouTypeFormatter;
+    NSString *number;
+    NSString *username;
+    NSString *email;
+    NSString *password;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *numberField;
