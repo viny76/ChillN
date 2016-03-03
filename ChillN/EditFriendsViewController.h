@@ -16,10 +16,11 @@
 #import "Person.h"
 #import "AppDelegate.h"
 
-@interface EditFriendsViewController : UITableViewController <UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchResultsUpdating> {
+@interface EditFriendsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, UISearchResultsUpdating> {
     NBPhoneNumberUtil *phoneUtil;
 }
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segment;
 @property (nonatomic, strong) NSArray *allUsers;
 @property (nonatomic, strong) PFRelation *friendsRelation;

@@ -156,6 +156,7 @@
         EventDetailViewController *viewController = (EventDetailViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         viewController.event = [self.events objectAtIndex:indexPath.row];
+        viewController.currentUser = self.currentUser;
     }
 }
 

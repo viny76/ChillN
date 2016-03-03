@@ -29,10 +29,8 @@
         [self.segment setHidden:YES];
     } else {
         self.participants = [self.event valueForKey:@"acceptedUser"];
-        NSLog(@"accepted %lu", (unsigned long)[self.participants count]);
         self.allParticipants = [self.event valueForKey:@"toUser"];
         self.refusedParticipants = [self.event valueForKey:@"refusedUser"];
-        NSLog(@"refused %lu", (unsigned long)[self.refusedParticipants count]);
     }
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -91,12 +89,12 @@
         cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.allParticipants objectAtIndex:indexPath.row ]];
     }
     else if (self.segment.selectedSegmentIndex == 1) {
-                cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.participants objectAtIndex:indexPath.row ]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.participants objectAtIndex:indexPath.row ]];
     }
     else if (self.segment.selectedSegmentIndex == 2) {
-                cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.refusedParticipants objectAtIndex:indexPath.row ]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.refusedParticipants objectAtIndex:indexPath.row ]];
     }
-
+    
     
     return cell;
 }
@@ -106,6 +104,79 @@
     
     PFUser *user = [[self.event valueForKey:@"toUser"] objectAtIndex:indexPath.row];
     NSLog(@"%@", user);
+}
+
+- (IBAction)yesButton:(id)sender {
+    PFQuery *query = [PFQuery queryWithClassName:@"Events"];
+    [query whereKey:@"objectId" equalTo:[self.event objectId]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            if ([[object valueForKey:@"acceptedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
+                NSLog(@"Already added");
+            } else {
+                if ([[object valueForKey:@"refusedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"acceptedUser"];
+                    [object removeObject:[self.currentUser objectForKey:@"surname"] forKey:@"refusedUser"];
+                    [self reloadEvent];
+                } else {
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"acceptedUser"];
+                    [self reloadEvent];
+                }
+            }
+            
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    [self reloadEvent];
+                }
+            }];
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
+- (IBAction)noButton:(id)sender {
+    PFQuery *query = [PFQuery queryWithClassName:@"Events"];
+    [query whereKey:@"objectId" equalTo:[self.event objectId]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            if ([[object valueForKey:@"refusedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
+                NSLog(@"Already added");
+            } else {
+                if ([[object valueForKey:@"acceptedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
+                    [object removeObject:[self.currentUser objectForKey:@"surname"] forKey:@"acceptedUser"];
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"refusedUser"];
+                } else {
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"refusedUser"];
+                }
+            }
+            
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    [self reloadEvent];
+                }
+            }];
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
+- (void)reloadEvent {
+    PFQuery *query = [PFQuery queryWithClassName:@"Events"];
+    [query whereKey:@"objectId" equalTo:[self.event objectId]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            self.event = object;
+            NSLog(@"CHECK %@", object);
+            self.participants = [self.event valueForKey:@"acceptedUser"];
+            self.allParticipants = [self.event valueForKey:@"toUser"];
+            self.refusedParticipants = [self.event valueForKey:@"refusedUser"];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"Error");
+        }
+    }];
 }
 
 @end

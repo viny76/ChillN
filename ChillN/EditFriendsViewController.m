@@ -26,8 +26,6 @@
     
     [self refreshAllUsersAndLoadFriends];
     
-    //  self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     //UISearchController
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
@@ -80,13 +78,13 @@
 
 - (IBAction)segmentedControlIndexChanged {
     if (self.segment.selectedSegmentIndex == 0) {
-        [self loadFriends];
+        [self loadFriends:NO];
         if (self.tableView.tableHeaderView == nil) {
             [self.tableView setTableHeaderView:self.searchController.searchBar];
         }
     }
     else if (self.segment.selectedSegmentIndex == 1) {
-        [self loadFriends];
+        [self loadFriends:NO];
         [self.tableView setTableHeaderView:nil];
     }
     else if (self.segment.selectedSegmentIndex == 2) {
@@ -206,20 +204,16 @@
         
         if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             // Already friend
-            self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+            self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             
             [PFCloud callFunctionInBackground:@"removeFriend" withParameters:@{@"friendRequest" : selected.objectId} block:^(id object, NSError *error) {
-                self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check"]];
-                self.hud.mode = MBProgressHUDModeCustomView;
-                self.hud.labelText = @"Deleted";
-                
                 if (!error) {
                     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         
                         if (succeeded) {
                             cell.accessoryType = UITableViewCellAccessoryNone;
                             [self.hud removeFromSuperview];
-                            [self loadFriends];
+                            [self loadFriends:YES];
                             self.tableView.userInteractionEnabled = YES;
                         }
                     }];
@@ -264,7 +258,7 @@
         }
         else if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             // Already friend
-            self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+            self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check.png"]];
             self.hud.mode = MBProgressHUDModeCustomView;
             self.hud.labelText = @"Deleted";
@@ -276,7 +270,7 @@
                         if (succeeded) {
                             cell.accessoryType = UITableViewCellAccessoryNone;
                             [self.hud removeFromSuperview];
-                            [self loadFriends];
+                            [self loadFriends:NO];
                             self.tableView.userInteractionEnabled = YES;
                         }
                     }];
@@ -478,9 +472,14 @@
     return NO;
 }
 
-- (void)loadFriends {
+- (void)loadFriends:(BOOL)fromDeleteFriend {
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
+    if (fromDeleteFriend) {
+        self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check"]];
+        self.hud.mode = MBProgressHUDModeCustomView;
+        self.hud.labelText = @"Deleted";
+    }
     self.friendsRelation = [self.currentUser relationForKey:@"friends"];
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
@@ -497,18 +496,16 @@
 }
 
 - (void)refreshAllUsersAndLoadFriends {
-    // Change MBProgressHUD here
-
-    self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.childViewControllers.lastObject.view animated:YES];
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
-    self.hud.layer.zPosition = 2;
-    self.tableView.layer.zPosition = 1;
+    self.segment.userInteractionEnabled = NO;
     PFQuery *query = [PFUser query];
     [query orderByAscending:@"surname"];
     //    [query whereKey:@"objectId" notEqualTo:self.currentUser.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
+            self.segment.userInteractionEnabled = YES;
             [self.hud removeFromSuperview];
         } else {
             self.allUsers = objects;
@@ -519,10 +516,12 @@
                 if (error) {
                     NSLog(@"Error %@ %@", error, [error userInfo]);
                     [self.hud removeFromSuperview];
+                    self.segment.userInteractionEnabled = YES;
                 } else {
                     self.friends = objects;
                     [self.tableView reloadData];
                     [self.hud removeFromSuperview];
+                    self.segment.userInteractionEnabled = YES;
                 }
             }];
         }
@@ -530,7 +529,7 @@
 }
 
 - (void)addFriend:(NSIndexPath *)indexPath forCell:(UITableViewCell *)cell {
-    self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
     // Get the selected request
     PFObject *friendRequest = [self.friendRequestsWaiting objectAtIndex:indexPath.row];
@@ -593,7 +592,7 @@
                          if (succeeded) {
                              [user deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                                  if (succeeded) {
-                                     [self loadFriends];
+                                     [self loadFriends:NO];
                                  }
                              }];
                          }
