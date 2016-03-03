@@ -15,10 +15,11 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (strong, nonatomic) NSString *questionString;
 @property (strong, nonatomic) IBOutlet UITextField *questionTextField;
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property(nonatomic,strong) PFObject *event;
 @property(nonatomic, strong) NSArray *allParticipants;
 @property(nonatomic, strong) NSArray *participants;
-@property(nonatomic, strong) NSArray *cancelParticipants;
+@property(nonatomic, strong) NSArray *refusedParticipants;
 
 @end

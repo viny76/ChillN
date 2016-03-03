@@ -37,6 +37,8 @@
     self.searchController.searchBar.scopeButtonTitles = @[];
     self.definesPresentationContext = YES;
     [self.searchController.searchBar sizeToFit];
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 -(void)dealloc {
@@ -205,11 +207,12 @@
         if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             // Already friend
             self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-            self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check"]];
-            self.hud.mode = MBProgressHUDModeCustomView;
-            self.hud.labelText = @"Deleted";
             
             [PFCloud callFunctionInBackground:@"removeFriend" withParameters:@{@"friendRequest" : selected.objectId} block:^(id object, NSError *error) {
+                self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check"]];
+                self.hud.mode = MBProgressHUDModeCustomView;
+                self.hud.labelText = @"Deleted";
+                
                 if (!error) {
                     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         
@@ -222,6 +225,7 @@
                     }];
                 } else {
                     NSLog(@"error");
+                    [self.hud removeFromSuperview];
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Try Again !" message:@"Check your network" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                     [alert show];
                     self.tableView.userInteractionEnabled = YES;
@@ -475,7 +479,7 @@
 }
 
 - (void)loadFriends {
-    self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
     self.friendsRelation = [self.currentUser relationForKey:@"friends"];
     PFQuery *query = [self.friendsRelation query];
@@ -492,28 +496,15 @@
     }];
 }
 
-- (void)refreshAllUsers {
-    PFQuery *query = [PFUser query];
-    //[query orderByAscending:@"name"];
-    //    [query whereKey:@"objectId" notEqualTo:self.currentUser.objectId];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-            [self.hud removeFromSuperview];
-        } else {
-            self.allUsers = objects;
-            [self.tableView reloadData];
-            [self.hud removeFromSuperview];
-        }
-    }];
-}
-
 - (void)refreshAllUsersAndLoadFriends {
-    self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    // Change MBProgressHUD here
+
+    self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.childViewControllers.lastObject.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
-    self.segment.userInteractionEnabled = NO;
+    self.hud.layer.zPosition = 2;
+    self.tableView.layer.zPosition = 1;
     PFQuery *query = [PFUser query];
-    //[query orderByAscending:@"name"];
+    [query orderByAscending:@"surname"];
     //    [query whereKey:@"objectId" notEqualTo:self.currentUser.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
@@ -521,7 +512,6 @@
             [self.hud removeFromSuperview];
         } else {
             self.allUsers = objects;
-            [self.tableView reloadData];
             self.friendsRelation = [self.currentUser relationForKey:@"friends"];
             PFQuery *query = [self.friendsRelation query];
             [query orderByAscending:@"username"];
@@ -532,7 +522,6 @@
                 } else {
                     self.friends = objects;
                     [self.tableView reloadData];
-                    self.segment.userInteractionEnabled = YES;
                     [self.hud removeFromSuperview];
                 }
             }];
@@ -668,9 +657,7 @@
             self.friendRequestsWaiting = [NSMutableArray arrayWithArray:objects];
             //reload the table
             [self.tableView reloadData];
-            NSLog(@"%@", self.friendRequestsWaiting);
         } else {
-            [self.hud removeFromSuperview];
             // Error occcurred
         }
     }];

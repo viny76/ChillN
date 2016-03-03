@@ -90,7 +90,6 @@
             if (range.length == 0) {
                 [textField setText:[asYouTypeFormatter inputDigit:string]];
             }
-            
             // Backspace
             else if (range.length == 1) {
                 [textField setText:[asYouTypeFormatter removeLastDigit]];
@@ -98,7 +97,7 @@
         }
         return NO;
     }
-    return  YES;
+    return YES;
 }
 
 - (BOOL)verificationsLength {
@@ -146,7 +145,7 @@
     [query whereKey:@"surname" equalTo:username];
     
     if ([query getFirstObject]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops !" message:@"Email already exists" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops !" message:@"Username already exists" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [self.hud removeFromSuperview];
         [alertView show];
         ok = NO;

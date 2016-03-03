@@ -175,8 +175,8 @@ replacementString:(NSString *)string {
 - (void)loadFriends {
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
+    self.navigationItem.rightBarButtonItem.enabled = false;
     self.friendsRelation = [self.currentUser relationForKey:@"friends"];
-    NSLog(@"%@", self.friendsRelation);
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"surname"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -186,6 +186,7 @@ replacementString:(NSString *)string {
          } else {
              self.friendsList = objects;
              [self.tableView reloadData];
+             self.navigationItem.rightBarButtonItem.enabled = true;
              [self.hud removeFromSuperview];
              self.friendHeight.constant = self.tableView.contentSize.height;
          }
@@ -245,7 +246,7 @@ replacementString:(NSString *)string {
         [events setObject:self.recipientUser forKey:@"toUser"];
         [events setObject:self.questionTextField.text forKey:@"question"];
         [events setObject:[NSNumber numberWithBool:[self.mySwitch isOn]] forKey:@"visibility"];
-        [events addObject:[self.currentUser objectId] forKey:@"acceptedUser"];
+        [events addObject:[self.currentUser objectForKey:@"surname"] forKey:@"acceptedUser"];
         [events setObject:self.selectedDate forKey:@"date"];
         [events saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {

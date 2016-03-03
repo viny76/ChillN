@@ -14,6 +14,7 @@
 #import "NBAsYouTypeFormatter.h"
 #import "MBProgressHUD.h"
 #import "Person.h"
+#import "AppDelegate.h"
 
 @interface EditFriendsViewController : UITableViewController <UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UISearchResultsUpdating> {
     NBPhoneNumberUtil *phoneUtil;

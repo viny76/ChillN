@@ -107,14 +107,14 @@
     [query whereKey:@"objectId" equalTo:[[self.events objectAtIndex:[sender tag]] valueForKey:@"objectId"]];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!error) {
-            if ([[object valueForKey:@"acceptedUser"] containsObject:[self.currentUser objectId]]) {
+            if ([[object valueForKey:@"acceptedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
                 NSLog(@"Already added");
             } else {
-                if ([[object valueForKey:@"refusedUser"] containsObject:[self.currentUser objectId]]) {
-                    [object addObject:[self.currentUser objectId] forKey:@"acceptedUser"];
-                    [object removeObject:[self.currentUser objectId] forKey:@"refusedUser"];
+                if ([[object valueForKey:@"refusedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"acceptedUser"];
+                    [object removeObject:[self.currentUser objectForKey:@"surname"] forKey:@"refusedUser"];
                 } else {
-                    [object addObject:[self.currentUser objectId] forKey:@"acceptedUser"];
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"acceptedUser"];
                 }
             }
             
@@ -130,14 +130,14 @@
     [query whereKey:@"objectId" equalTo:[[self.events objectAtIndex:[sender tag]] valueForKey:@"objectId"]];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!error) {
-            if ([[object valueForKey:@"refusedUser"] containsObject:[self.currentUser objectId]]) {
+            if ([[object valueForKey:@"refusedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
                 NSLog(@"Already added");
             } else {
-                if ([[object valueForKey:@"acceptedUser"] containsObject:[self.currentUser objectId]]) {
-                    [object removeObject:[self.currentUser objectId] forKey:@"acceptedUser"];
-                    [object addObject:[self.currentUser objectId] forKey:@"refusedUser"];
+                if ([[object valueForKey:@"acceptedUser"] containsObject:[self.currentUser objectForKey:@"surname"]]) {
+                    [object removeObject:[self.currentUser objectForKey:@"surname"] forKey:@"acceptedUser"];
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"refusedUser"];
                 } else {
-                    [object addObject:[self.currentUser objectId] forKey:@"refusedUser"];
+                    [object addObject:[self.currentUser objectForKey:@"surname"] forKey:@"refusedUser"];
                 }
             }
             
