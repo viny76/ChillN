@@ -15,6 +15,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Reload event
+    PFQuery *query = [PFQuery queryWithClassName:@"Events"];
+    [query whereKey:@"objectId" equalTo:[self.event objectId]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            self.event = object;
+            self.participants = [self.event valueForKey:@"acceptedUser"];
+            self.allParticipants = [self.event valueForKey:@"toUser"];
+            self.refusedParticipants = [self.event valueForKey:@"refusedUser"];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"Error");
+        }
+    }];
     self.usernameLabel.text = [self.event valueForKey:@"fromUser"];
     self.questionString = [self.event valueForKey:@"question"];
     self.questionTextField.text = [NSString stringWithFormat:@"%@", self.questionString];

@@ -39,7 +39,7 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
--(void)dealloc {
+- (void)dealloc {
     [self.searchController.view removeFromSuperview];
 }
 
@@ -51,7 +51,8 @@
         return 1;
     }
     else if (self.segment.selectedSegmentIndex == 1) {
-        return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
+        return (self.searchResults.count > 0 ? 1 : [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count]);
+        return ;
     }
     else if (self.segment.selectedSegmentIndex == 2) {
         return 1;
@@ -67,7 +68,7 @@
     else if (self.segment.selectedSegmentIndex == 1) {
         BOOL showSection = [[self.sectionedPersonName objectAtIndex:section] count] != 0;
         // Only show the section title if there are rows in the section
-        return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
+        return (self.searchResults.count > 0 ? @"Search Friend" : (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil);
     }
     else if (self.segment.selectedSegmentIndex == 2) {
         return @"Pending Friends";
@@ -79,19 +80,12 @@
 - (IBAction)segmentedControlIndexChanged {
     if (self.segment.selectedSegmentIndex == 0) {
         [self loadFriends:NO];
-        if (self.tableView.tableHeaderView == nil) {
-            [self.tableView setTableHeaderView:self.searchController.searchBar];
-        }
     }
     else if (self.segment.selectedSegmentIndex == 1) {
         [self loadFriends:NO];
-        [self.tableView setTableHeaderView:nil];
     }
     else if (self.segment.selectedSegmentIndex == 2) {
         [self refreshWaitingFriend];
-        if (self.tableView.tableHeaderView == nil) {
-            [self.tableView setTableHeaderView:self.searchController.searchBar];
-        }
     }
     
     self.tableView.hidden = NO;
@@ -103,7 +97,7 @@
     if (self.segment.selectedSegmentIndex == 0) {
     }
     else if (self.segment.selectedSegmentIndex == 1) {
-        return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+        return (self.searchResults.count > 0 ? nil : [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles]);
     }
     else if (self.segment.selectedSegmentIndex == 2) {
     }
@@ -112,7 +106,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString*)title atIndex:(NSInteger)index {
-    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
+    return (self.searchResults.count > 0 ? 0 : [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index]);
 }
 
 
@@ -122,7 +116,7 @@
     }
     
     else if (self.segment.selectedSegmentIndex == 1) {
-        return [[self.sectionedPersonName objectAtIndex:section] count];
+        return (self.searchResults.count > 0 ? [self.searchResults count] : [[self.sectionedPersonName objectAtIndex:section] count]);
     }
     else if (self.segment.selectedSegmentIndex == 2) {
         return (self.searchResults.count > 0 ? [self.searchResults count] : [self.friendRequestsWaiting count]);
@@ -165,7 +159,8 @@
     }
     
     else if (self.segment.selectedSegmentIndex == 1) {
-        Person *person = [[self.sectionedPersonName objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        NSArray *sourceData = (self.searchResults.count > 0 ? self.searchResults : [self.sectionedPersonName objectAtIndex:indexPath.section]);
+        Person *person = [sourceData objectAtIndex:indexPath.row];
         cell.textLabel.text = person.fullName;
         cell.detailTextLabel.text = nil;
         
@@ -233,7 +228,8 @@
     
     //CONTACT
     else if (self.segment.selectedSegmentIndex == 1) {
-        Person *person = [[self.sectionedPersonName objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        NSArray *sourceData = (self.searchResults.count > 0 ? self.searchResults : [self.sectionedPersonName objectAtIndex:indexPath.section]);
+        Person *person = [sourceData objectAtIndex:indexPath.row];
         NSLog(@"%@", person.number);
         
         NSMutableArray *realResult   = [NSMutableArray new];
@@ -259,7 +255,7 @@
         else if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             // Already friend
             self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check.png"]];
+            self.hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check"]];
             self.hud.mode = MBProgressHUDModeCustomView;
             self.hud.labelText = @"Deleted";
             
@@ -370,6 +366,7 @@
         
         else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
             // The user has previously given access, add all the user's contacts to array.
+            NSLog(@"kABAuthorizationStatusAuthorized");
             NSMutableSet *foundIDs = [NSMutableSet set];
             NSArray *allContacts = CFBridgingRelease(ABAddressBookCopyArrayOfAllPeople(addressBook));
             
@@ -422,10 +419,13 @@
             NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"fullName" ascending:YES];
             [self.tableData sortUsingDescriptors:@[descriptor]];
             self.sectionedPersonName = [self partitionObjects:self.tableData collationStringSelector:@selector(fullName)];
-        } else {
+        }
+        else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied) {
+            NSLog(@"denied");
+        }
+        else {
             //9
             NSLog(@"ERROR!!!");
-            return;
         }
     } else {
         NSLog(@"No AddressBook");
@@ -573,8 +573,7 @@
     }];
 }
 
-- (void)checkSelectedUserRequest:(PFUser *)selectedUser forIndexPath:(NSIndexPath *)indexPath forCell:(UITableViewCell *)cell
-{
+- (void)checkSelectedUserRequest:(PFUser *)selectedUser forIndexPath:(NSIndexPath *)indexPath forCell:(UITableViewCell *)cell {
     // Check if selected user has already sent a request.
     PFQuery *checkSelectedUserRequest = [PFQuery queryWithClassName:@"FriendRequest"];
     [checkSelectedUserRequest whereKey:@"to" equalTo:self.currentUser];
@@ -669,21 +668,19 @@
 }
 
 - (void)searchForText:(NSString *)searchText {
-    
     NSPredicate *predicate;
     if (self.segment.selectedSegmentIndex == 0) {
-        NSLog(@"%@", self.allUsers);
         predicate = [NSPredicate predicateWithFormat:@"surname beginswith[c] %@", searchText];
         self.searchResults = [self.allUsers filteredArrayUsingPredicate:predicate];
     }
     else if (self.segment.selectedSegmentIndex == 1) {
-        //        for (Person *person in self.sectionedPersonName) {
-        //            NSLog(@"%@", person.fullName);
-        //        }
-        //        NSLog(@"%@", self.sectionedPersonName);
-        //        predicate = [NSPredicate predicateWithFormat:@"SELF.fullName beginswith[c] %@", searchText];
-        //        self.searchResults = [self.sectionedPersonName filteredArrayUsingPredicate:predicate];
-    } else if (self.segment.selectedSegmentIndex == 2) {
+        [self.tableData enumerateObjectsUsingBlock:^(Person *obj, NSUInteger idx, BOOL *stop) {
+            __block NSPredicate *fullNamePredicate = [NSPredicate predicateWithFormat:@"fullName beginswith[c] %@", searchText];
+            self.searchResults = [self.tableData filteredArrayUsingPredicate:fullNamePredicate];
+        }];
+        
+    }
+    else if (self.segment.selectedSegmentIndex == 2) {
         predicate = [NSPredicate predicateWithFormat:@"fromUsername beginswith[c] %@", searchText];
         self.searchResults = [self.friendRequestsWaiting filteredArrayUsingPredicate:predicate];
     }

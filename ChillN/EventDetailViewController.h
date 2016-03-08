@@ -22,5 +22,6 @@
 @property(nonatomic, strong) NSArray *allParticipants;
 @property(nonatomic, strong) NSArray *participants;
 @property(nonatomic, strong) NSArray *refusedParticipants;
+@property (strong, nonatomic) IBOutlet UIView *questionView;
 
 @end
