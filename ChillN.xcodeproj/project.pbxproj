@@ -99,7 +99,7 @@
 		2CA207F71AF015B60054D97A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		2CA207F91AF01B520054D97A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2CA207FA1AF01B520054D97A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		2CA740B41AC4B79B00392C7C /* ChillN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChillN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA740B41AC4B79B00392C7C /* Chillin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chillin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA740B81AC4B79B00392C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CA740B91AC4B79B00392C7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CA740BB1AC4B79B00392C7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		2CA740B51AC4B79B00392C7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CA740B41AC4B79B00392C7C /* ChillN.app */,
+				2CA740B41AC4B79B00392C7C /* Chillin.app */,
 				2CA740CD1AC4B79B00392C7C /* ChillNTests.xctest */,
 			);
 			name = Products;
@@ -380,7 +380,7 @@
 			);
 			name = ChillN;
 			productName = ChillN;
-			productReference = 2CA740B41AC4B79B00392C7C /* ChillN.app */;
+			productReference = 2CA740B41AC4B79B00392C7C /* Chillin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2CA740CC1AC4B79B00392C7C /* ChillNTests */ = {
@@ -606,6 +606,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_MODULE_NAME = ChillN;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "Pods/SevenSwitch/**";
 			};
@@ -622,6 +623,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_MODULE_NAME = ChillN;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "Pods/SevenSwitch/**";
 			};
@@ -644,7 +646,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChillCompany.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Chillin;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -669,7 +671,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChillCompany.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Chillin;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = Pods/SevenSwitch;
