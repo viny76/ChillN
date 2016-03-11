@@ -429,7 +429,7 @@
         }
     } else {
         NSLog(@"No AddressBook");
-        UIAlertView *cantAddContactAlert = [[UIAlertView alloc] initWithTitle: @"Cannot Search by Contact" message: @"You must give the app permission in Parameter > ChillN" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+        UIAlertView *cantAddContactAlert = [[UIAlertView alloc] initWithTitle: @"Cannot Search by Contact" message: @"You must give the app permission in Parameter > Chillin" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
         [cantAddContactAlert show];
         // The user has previously denied access
         // Send an alert telling user that they must allow access to proceed to the "invites" page.
